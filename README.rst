@@ -22,48 +22,44 @@
 .. image:: https://img.shields.io/pypi/pyversions/python-binance.svg
     :target: https://pypi.python.org/pypi/python-binance
 
-This is an unofficial Python wrapper for the `Binance exchange REST API v3 <https://binance-docs.github.io/apidocs/spot/en>`_. I am in no way affiliated with Binance, use at your own risk.
+这是一个非官方的Python封装，用于Binance交易所REST API v3 <https://binance-docs.github.io/apidocs/spot/zh>_。本人与币安无关，使用需谨慎。
 
-If you came here looking for the `Binance exchange <https://www.binance.com/?ref=10099792>`_ to purchase cryptocurrencies, then `go here <https://www.binance.com/?ref=10099792>`_.
-If you want to automate interactions with Binance stick around.
+如果您来这里是为了在Binance交易所 <https://www.binance.com/zh-CN/register?ref=10099792>购买加密货币，则请前往此处 <https://www.binance.com/zh-CN/register?ref=10099792>。如果您想自动化与币安的交互，请继续阅读。
 
-If you're interested in Binance's new DEX Binance Chain see my `python-binance-chain library <https://github.com/sammchardy/python-binance-chain>`_
+如果您对Binance的新DEX Binance Chain感兴趣，请查看我的python-binance-chain库<https://github.com/sammchardy/python-binance-chain>_
 
-Source code
-  https://github.com/sammchardy/python-binance
+源代码
+https://github.com/sammchardy/python-binance
 
-Documentation
-  https://python-binance.readthedocs.io/en/latest/
+文档
+https://python-binance.readthedocs.io/en/latest/
 
-Binance API Telegram
-  https://t.me/binance_api_english
+币安API Telegram
+https://t.me/binance_api_chinese
 
-Blog with examples including async
-  https://sammchardy.github.io
+包含异步示例的博客
+https://sammchardy.github.io
 
-- `Async basics for Binance <https://sammchardy.github.io/binance/2021/05/01/async-binance-basics.html>`_
-- `Understanding Binance Order Filters <https://sammchardy.github.io/binance/2021/05/03/binance-order-filters.html>`_
+Binance的异步基础知识<https://sammchardy.github.io/binance/2021/05/01/async-binance-basics.html>_
+理解Binance订单过滤器<https://sammchardy.github.io/binance/2021/05/03/binance-order-filters.html>_
+确保经常更新并查看Changelog <https://python-binance.readthedocs.io/en/latest/changelog.html>_以获取新功能和错误修复。
 
-Make sure you update often and check the `Changelog <https://python-binance.readthedocs.io/en/latest/changelog.html>`_ for new features and bug fixes.
-
-Features
---------
-
-- Implementation of all General, Market Data and Account endpoints.
-- Asyncio implementation
-- Testnet support for Spot, Futures and Vanilla Options
-- Simple handling of authentication include RSA keys
-- No need to generate timestamps yourself, the wrapper does it for you
-- Response exception handling
-- Websocket handling with reconnection and multiplexed connections
-- Symbol Depth Cache
-- Historical Kline/Candle fetching function
-- Withdraw functionality
-- Deposit addresses
-- Margin Trading
-- Futures Trading
-- Vanilla Options
-- Support other domains (.us, .jp, etc)
+功能
+实现了所有常规，市场数据和账户终点。
+异步IO实现
+支持Spot、Futures和Vanilla Options的测试网
+简单处理身份验证，包括RSA密钥
+无需自己生成时间戳，封装器会为您完成
+响应异常处理
+处理带有重连和多路复用连接的WebSocket
+符号深度缓存
+历史K线/蜡烛获取函数
+提现功能
+存款地址
+杠杆交易
+期货交易
+Vanilla Options
+支持其他域名（.us，.jp等)
 
 Upgrading to v1.0.0+
 --------------------
