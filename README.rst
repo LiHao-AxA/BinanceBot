@@ -1,8 +1,8 @@
 =================================
-Welcome to python-binance v1.0.17
+欢迎使用python-binance v1.0.17
 =================================
 
-Updated 21st Feb 2023
+更新时间：2023年2月21日
 
 .. image:: https://img.shields.io/pypi/v/python-binance.svg
     :target: https://pypi.python.org/pypi/python-binance
