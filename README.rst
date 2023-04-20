@@ -22,7 +22,7 @@
 .. image:: https://img.shields.io/pypi/pyversions/python-binance.svg
     :target: https://pypi.python.org/pypi/python-binance
 
-这是一个非官方的Python封装，用于Binance交易所REST API v3 <https://binance-docs.github.io/apidocs/spot/zh>_。本人与币安无关，使用需谨慎。
+这是一个非官方的Python封装，用于`Binance交易所REST API v3 <https://binance-docs.github.io/apidocs/spot/zh>`_。本人与币安无关，使用需谨慎。
 
 如果您来这里是为了在Binance交易所 <https://www.binance.com/zh-CN/register?ref=10099792>购买加密货币，则请前往此处 <https://www.binance.com/zh-CN/register?ref=10099792>。如果您想自动化与币安的交互，请继续阅读。
 
