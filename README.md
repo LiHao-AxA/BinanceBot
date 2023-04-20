@@ -4,7 +4,7 @@
 
 更新时间：2023年2月21日
 
-[https://img.shields.io/pypi/v/python-binance.svg]<img src='https://pypi.python.org/pypi/python-binance'>
+[https://pypi.python.org/pypi/python-binance]<img src='https://img.shields.io/pypi/v/python-binance.svg'>
 
 .. image:: https://img.shields.io/pypi/l/python-binance.svg
     :target: https://pypi.python.org/pypi/python-binance
