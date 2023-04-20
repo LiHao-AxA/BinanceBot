@@ -24,7 +24,7 @@
 
 这是一个非官方的Python包装器，用于`Binance exchange REST API v3 <https://binance-docs.github.io/apidocs/spot/en>`_. 我与币安没有任何关系，使用风险自负。
 
-如果你来这里找'币安交易所'<https://www.binance.com/?ref=10036213>`_ 要购买加密货币，请点击此处 <https://www.binance.com/?ref=10036213>`_.
+如果你来这里找`币安交易所<https://www.binance.com/?ref=10036213>`_ 要购买加密货币，请点击此处 <https://www.binance.com/?ref=10036213>`_.
 如果你想自动化与币安的交互，请留下来。
 
 If you're interested in Binance's new DEX Binance Chain see my `python-binance-chain library <https://github.com/sammchardy/python-binance-chain>`_
