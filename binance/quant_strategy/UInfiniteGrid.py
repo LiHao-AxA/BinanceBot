@@ -4,7 +4,7 @@ from binance.client import Client
 from decimal import Decimal, ROUND_DOWN
 
 # 配置日志，将每一个子程序运行的日志保存为InfiniteGrid.log文件
-logging.basicConfig(filename='E:\InfiniteGrid.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',encoding='utf-8')
+logging.basicConfig(filename='/InfiniteGrid.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',encoding='utf-8')
 logger = logging.getLogger()
 
 # 初始化API连接
