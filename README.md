@@ -1,4 +1,4 @@
-  一个币安量化机器人.
+  一个币安量化机器人.  [注册币安](https://accounts.binance.com/register?ref=10036213)
   
   策略放在binance>quant_strategy文件下.
   
