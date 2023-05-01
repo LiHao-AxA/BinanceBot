@@ -4,7 +4,7 @@ from binance.client import Client
 from decimal import Decimal, ROUND_DOWN
 
 # 配置日志，将每一个子程序运行的日志保存为InfiniteGrid.log文件
-logging.basicConfig(filename='/InfiniteGrid.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',encoding='utf-8')
+logging.basicConfig(filename='E:\InfiniteGrid.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',encoding='utf-8')
 logger = logging.getLogger()
 
 # 初始化API连接
@@ -39,7 +39,6 @@ symbol_info = None
 for s in exchange_info['symbols']:
     if s['symbol'] == symbol:
         symbol_info = s
-        # print(symbol_info)
         break
  # 最小价格变动单位（tick size）
 tick_size = float(symbol_info['filters'][0]['tickSize'])   
@@ -50,7 +49,7 @@ tick_size = float(symbol_info['filters'][0]['tickSize'])
 quantity_precision = symbol_info['quantityPrecision']
 # logger.info(f"开仓精度:{quantity_precision}")
 # 价格精度
-price_precision = symbol_info['pricePrecision']
+price_precision = len(symbol_info['filters'][0]['tickSize'].split('.')[1].rstrip('0'))
 # COIN符号
 coin = symbol_info['baseAsset']
 # logger.info(f"价格精度:{quantity_precision}")
@@ -68,12 +67,12 @@ coin_balance_status = round((usdt_balance_status / current_price),price_precisio
 # USDT设置初始仓位
 usdt_position_size = 30
 # COIN设置初始仓位
-position_size = round(( usdt_position_size / current_price),quantity_precision)# 初始仓位为0.01张
+position_size = round(( usdt_position_size / current_price),price_precision)# 初始仓位为0.01张
 # logger.info(position_size)
 # USDT设置网格仓位
 usdt_grid_spacing = 10
 # COIN设置网格加仓数量
-grid_spacing = round(usdt_grid_spacing / current_price * (usdt_balance / usdt_balance_status),quantity_precision) # 每个网格的加仓数量为3个网格间距
+grid_spacing = round(usdt_grid_spacing / current_price * (usdt_balance / usdt_balance_status),price_precision) # 每个网格的加仓数量为3个网格间距
 logger.info(grid_spacing)
 
 # 实现交易策略
@@ -134,11 +133,11 @@ while True:
             # 以历史最新成交价计算下一个网格的委托价 
             if grid_status == 1:
                 # 做多加仓
-                next_price = round(entry_price * (1 - grid_size),quantity_precision)
+                next_price = round(entry_price * (1 - grid_size),price_precision)
                 order_ids = []
                 for i in range(grid_count):
                     try:
-                        order_price = round(next_price - i * grid_size * entry_price, quantity_precision)
+                        order_price = round(next_price - i * grid_size * entry_price, price_precision)
                         logger.info(f"做多加仓网格，价格为{order_price}")
 
                         order = client.futures_create_order(
@@ -159,11 +158,11 @@ while True:
         
                 # next_price = round((next_price - grid_size * entry_price),quantity_precision)
                 # 做多减仓
-                next_price = round(entry_price * (1 + grid_size),quantity_precision)
+                next_price = round(entry_price * (1 + grid_size),price_precision)
                 order_ids = []
                 for i in range(grid_count):
                     try:
-                        order_price = round(next_price + i * grid_size * entry_price, quantity_precision)
+                        order_price = round(next_price + i * grid_size * entry_price, price_precision)
                         logger.info(f"做多减仓网格，价格为{order_price}")
 
                         order = client.futures_create_order(
@@ -195,11 +194,11 @@ while True:
 
             elif grid_status == 0:
                 # 做空加仓
-                next_price = round(entry_price * (1 + grid_size),quantity_precision)
+                next_price = round(entry_price * (1 + grid_size),price_precision)
                 order_ids = []
                 for i in range(grid_count):
                     try:
-                        order_price = round(next_price + i * grid_size * entry_price, quantity_precision)
+                        order_price = round(next_price + i * grid_size * entry_price, price_precision)
                         logger.info(f"做空加仓网格，价格为{order_price}")
                         order = client.futures_create_order(
                             symbol=symbol,
@@ -217,11 +216,11 @@ while True:
                         continue  # 如果下单失败，直接跳过本次循环
                 # next_price = round((next_price + grid_size * entry_price),quantity_precision)
                 # 做空减仓
-                next_price = round(entry_price * (1 - grid_size),quantity_precision)
+                next_price = round(entry_price * (1 - grid_size),price_precision)
                 order_ids = []
                 for i in range(grid_count):
                     try:
-                        order_price = round(next_price - i * grid_size * entry_price, quantity_precision)
+                        order_price = round(next_price - i * grid_size * entry_price, price_precision)
                         logger.info(f"做空减仓网格，价格为{order_price}")
                         order = client.futures_create_order(
                             symbol=symbol,
