@@ -24,7 +24,7 @@ for balance in balances:
 # 设置杠杆（现货不支持杠杆）
 # client.futures_change_leverage(symbol=symbol, leverage=leverage)
 
-grid_size = 0.001  # 设置网格间距
+grid_size = 0.03  # 设置网格间距
 
 # 设置做多做空方向状态 0表示做空 1表示做多
 grid_status = 1  # 初始状态为做多
