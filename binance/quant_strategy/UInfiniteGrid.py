@@ -55,17 +55,17 @@ ticker = client.futures_symbol_ticker(symbol=symbol)
 current_price = float(ticker['price'])
 # logger.info(f"当前价格: {current_price}")
 # 设置USDT初始余额
-usdt_balance_status = 1500
+usdt_balance_status = 1980
 # 设置COIN初始余额
 coin_balance_status = round((usdt_balance_status / current_price),price_precision)
 # logger.info(f"{coin}初始余额: {coin_balance_status}")
 # USDT设置初始仓位
-usdt_position_size = 100
+usdt_position_size = 1800
 # COIN设置初始仓位
 position_size = round(( usdt_position_size / current_price),quantity_precision)# 初始仓位为0.01张
 logger.info(f"COIN设置初始仓位:{position_size}")
 # USDT设置网格仓位
-usdt_grid_spacing = 150
+usdt_grid_spacing = 100
 
 # 实现交易策略
 # 开仓成功后，跳出初始开仓操作
