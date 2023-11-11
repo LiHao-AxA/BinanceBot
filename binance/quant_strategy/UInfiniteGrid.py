@@ -13,16 +13,20 @@ API_SECRET = 'YOU_API_SECRET'
 client = Client(API_KEY, API_SECRET)
 
 # 设置交易参数
-symbol = "SUIUSDT"  # 选择交易对
+# 选择交易对
+symbol = "SUIUSDT"
 
-leverage = 10  # 设置杠杆大小
+# 设置杠杆倍数
+leverage = 10  
 # 设置杠杆
 client.futures_change_leverage(symbol=symbol, leverage=leverage)
 
-grid_size = 0.005  # 设置网格间距
+# 设置网格间距
+grid_size = 0.005  
 
 # 设置做多做空方向状态 0表示做空 1表示做多
-grid_status = 1  # 初始状态为做多
+# 初始状态为做多
+grid_status = 1  
 
 # 设置初始开仓价格，开仓价格为0表示使用最新市场价
 entry_price = 0
